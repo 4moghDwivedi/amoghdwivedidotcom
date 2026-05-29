@@ -1,0 +1,46 @@
+h1 {
+    font-family: 'Work Sans';
+    font-weight: 100;
+    color: white;
+    text-align: center;
+}
+hr {
+    width: 40%;
+    color: gray;
+}
+
+p {
+    font-family: 'Work Sans';
+    font-weight: 100;
+    color: white;
+    text-align: center
+}
+pre {
+    font-family: 'Work Sans';
+    font-weight: 100;
+    color: white;
+    text-align: center
+}
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: gray;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
