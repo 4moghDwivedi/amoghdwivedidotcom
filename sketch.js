@@ -66,7 +66,8 @@ let e2Linez = [];
 let frameLinez = [];
 
 function setup(){
-    createCanvas(500, 500);
+    let canvas = createCanvas(500, 500);
+    canvas.parent('sketch-holder');
 
     bRed = 0;
     bGreen = 0;
@@ -77,7 +78,7 @@ function setup(){
 }
 function draw(){
 
-    background(bRed, bBlue, bGreen, 255);
+    background(bRed, bBlue, bGreen, 165);
 
     frameRate(random(5, 10));
     angleMode(DEGREES);
@@ -266,7 +267,7 @@ function setupLetters(){
 function updateDev(devAmount)
 {
 
-    devAmount = constrain(devAmount, 0, 100);
+    devAmount = constrain(devAmount, 3, 100);
     for (let i = 0; i < nCoords.length; i++)
         {
             nLinez[i].changeDev(devAmount);

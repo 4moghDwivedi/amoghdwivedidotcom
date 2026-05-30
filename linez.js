@@ -30,7 +30,7 @@ class linez{
     this.yPoint = 0;
 
     this.r = 255;
-    this.g = 0;
+    this.g = random(50, 130);
     this.b = 0;
 
     this.execPointX = this.xPoint + this.dev;
@@ -98,7 +98,7 @@ class linez{
   }
 
   display(){
-    if(random(100) < 1.5){
+    if(random(100) < 3){ //this makes the stuff pop in
       this.renderChoice = random(0, 1);
       this.renderChoice = round(this.renderChoice);
     }
@@ -119,8 +119,8 @@ class linez{
   straightLines(xa, ya, xb, yb){
 
     for (let i = 0; i < this.numLines; i++){
-      strokeWeight(random(1, 10));
-      stroke(this.r, this.g, this.b, random(20));
+      strokeWeight(random(1, 5));
+      stroke(this.r, this.g, this.b, random(26));
       line(this.execX1[i], this.execY1[i], this.execX2[i], this.execY2[i]);  
     }
   }
@@ -150,10 +150,12 @@ class linez{
         this.execPointY = constrain(this.execPointY, height * 0.1, height * 0.9);
 
 
-        let newStrokeWeight = constrain(this.dev, 10, 20);
+        let newStrokeWeight = constrain(this.dev, random(1, 15), 20);
+        angleMode(DEGREES);
         strokeWeight(random(newStrokeWeight));
-        stroke(this.r, this.g, this.b, random(40));
-        point(this.execPointX, this.execPointY);
+        stroke(255, random(5));
+        fill(this.r, this.g, this.b, random(155))
+        arc(this.execPointX, this.execPointY, random(5), random(5), random(0, 180), random(180, 360));
       }
 
     }
