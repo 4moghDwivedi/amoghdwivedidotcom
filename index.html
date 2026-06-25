@@ -1,45 +1,88 @@
 <!DOCTYPE html>
-<html lang="EN">
+<html>
+    <head>
+          <style>
+      .tabs{
+        text-align: right;
+        /* margin-right: 5%; */
+        /* border: 0.1px solid white; */
+      }
+      .sidebar{
+        display: flex;
+        /* border: 2px solid red; */
+        /* margin-right: 100px; */
+        min-height: 500px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 100px;
+      }
+      .dummy{
+        width: 100px;
+      }
+      .homebox{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        min-height: 400px;
+        grid-template-columns: 1fr 500px 250px;
+        gap: 200px;
 
-  <head>
-        <title> Amogh Dwivedi</title>
-        <link rel="stylesheet" href="styles.css">
-        <!-- used chatgpt for importing fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
-        <!-- used chatgpt for general logic behind implementing a p5 sketch -->
-        <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.js"></script>
-  </head>
 
-  <body style="background-color: black;">
+        /* border: 2px solid green; */
 
-<br>
-<br>
-<br>
-<br>
-  <!-- <hr> -->
+      }
+    </style>
+            <title> homepage </title>
+            <link rel="stylesheet" href="../styles.css">
+            <!-- used chatgpt for importing fonts -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
+            <!-- used chatgpt for general logic behind implementing a p5 sketch -->
+            <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.js"></script>
+    </head>
 
-<div id="sketch-holder"></div>
-
-<script src="linez.js"></script>
-<script src="sketch.js"></script>
-  <br>
-  <br>
-  <br>
-
+    <body style="background-color: black;">
 
   <!-- HEADER -->
-  <h1> <a href="/">AMOGH DWIVEDI</a></h1>
+    <!-- <br>
+    <br>
+  <h1 style="margin-top: 3%"> <a href="../">AMOGH DWIVEDI</a></h1>
   <div style="text-align: center;" >
-      <a style="margin:0 30px" href="music/"> music </a>
-      <!-- <a> | </a> -->
-      <a style="margin:0 30px" href="bio/"> bio </a>
-      <!-- <a> | </a> -->
-      <a style="margin:0 30px" href="contact/"> contact </a>
       <br>
-  </div>
+      <br>
+      <br>
+  </div> -->
   <!-- HEADER -->
+<br>
+<br>
+<br>
+<br>
+<br>
 
-  </body>
+      <div class="homebox">
+
+        <!-- dummy sidebar for alignment purposes-->
+        <div class="sidebar">
+        </div>
+
+      <div id="sketch-holder"></div>
+        <div class="sidebar">
+          <p class="tabs"><a href="music/">music</a></p>
+          <p class="tabs"><a href="blog/">blog</a></p>
+          <p class="tabs"><a href="bio">biography</a></p>
+          <!-- <p class="tabs">photos</p> -->
+          <p class="tabs"><a href="contact/">contact</a></p>
+          <!-- <p class="tabs">about this site</p> -->
+        </div>
+
+      <script src="linez.js"></script>
+      <script src="sketch.js"></script>
+
+      </div>
+      
+    </body>
 </html>

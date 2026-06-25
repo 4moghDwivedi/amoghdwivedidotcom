@@ -20,31 +20,47 @@
             font-weight: 100;
             color: rgba(255, 255, 255, 200);
         }
+        .unavailable{
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 100;
+            margin: 0px;
+            text-align: right;
+        }
     </style>
     
     </head>
 
     <body style="background-color: black;">
-      <!-- HEADER -->
-  <h1> <a href="../">AMOGH DWIVEDI</a></h1>
+
+  <!-- HEADER -->
+  <h1 style="margin-top: 3%"> <a href="../">AMOGH DWIVEDI</a></h1>
   <div style="text-align: center;" >
-      <a style="margin:0 30px" href="../music/"> music </a>
-      <!-- <a> | </a> -->
+      <!-- <a style="margin:0 30px" href="../music/"> music </a>
       <a style="margin:0 30px" href="../bio/"> bio </a>
-      <!-- <a> | </a> -->
-      <a style="margin:0 30px" href="../contact/"> contact </a>
+      <a style="margin:0 30px" href="../contact/"> contact </a> -->
+      <br>
+      <br>
       <br>
   </div>
   <!-- HEADER -->
 
 <br>
-<br>
-<br>
-<br>
-<br>
 
-<div style="display: flex; gap: 50px; margin: auto">
+<div style="display: flex; gap: 50px;">
 <table>
+
+        <tr>
+        <td class="date">7 June 2026</td>
+        <td class="title"> 
+            <a class="title"
+            href="fracture/"
+            onmouseout="hidePreview()"
+            onmouseover="showPreview('fracture/photo.jpg', 'New scar')">
+            Comminuted Displaced Intra Articular Distal Radius Fracture
+            </a>
+        </td>
+
+    </tr>
     <tr>
         <td class="date">24 Jan 2025</td>
         <td class="title"> 
@@ -52,7 +68,7 @@
             href=""
             onmouseout="hidePreview()"
             onmouseover="showPreview('images/mytop5musicalweaknesses.jpg', 'Reflections on some things I can improve as a musician.')">
-            My top 5 musical weaknesses
+            <p class="unavailable">My top 5 musical weaknesses</p>
             </a>
         </td>
 
@@ -65,7 +81,7 @@
             href=""
             onmouseout="hidePreview()"
             onmouseover="showPreview('images/whycomputermusic.png', 'The blank canvas that computer music offers is a seductive invitation to explore your musical creativity.')">
-            Why computer music?
+            <p class="unavailable">Why computer music?</p>
             </a>
         </td>
     </tr>
@@ -77,7 +93,7 @@
             href=""
             onmouseout="hidePreview()"
             onmouseover="showPreview('images/justrhythmmelodyharmony.jpg', 'The ways we think about music are exclusive to the times we live in and the traditions we happen to be inculcated with.')">
-            Just rhythm, melody, and harmony?
+            <p class="unavailable">Just rhythm, melody, and harmony?</p>
             </a>
         </td>
     </tr>
@@ -89,7 +105,7 @@
              href=""
              onmouseout="hidePreview()"
              onmouseover="showPreview('images/whyimadefaucet.png', 'I finally made something personal, and was making the music I had wanted to go to music school for— thoughtfully composed electronic music.')">
-            Why I made "Faucet"
+            <p class="unavailable">Why I made "Faucet"</p>
             </a></td>
     </tr>
 
@@ -100,7 +116,7 @@
            href="#"
            onmouseover="showPreview('images/whatdoescodingmusiclooklike.jpg', 'An attempt to show some basic techniques I use when I make generative music.')"
            onmouseout="hidePreview()">
-           What does coding music look like?
+           <p class="unavailable">What does coding music look like?</p>
         </a>
     </td>
 </tr>
@@ -112,7 +128,7 @@
            href="#"
            onmouseover="showPreview('images/argumentshandwritten.jpg', 'I had a friendly clash with one of my professors about whether it was worth it to write music solely by hand. Long story short, she won.')"
            onmouseout="hidePreview()">
-           Arguments in favor of handwritten music
+           <p class="unavailable">Arguments in favor of handwritten music</p>
         </a>
     </td>
 </tr>
@@ -124,7 +140,7 @@
            href="#"
            onmouseover="showPreview('images/chanamasalarecipe.JPG', 'It is a pleasure having good friends over and cooking for them. In case I never invite you just follow this recipe and you should be all set')"
            onmouseout="hidePreview()">
-           Chana masala recipe
+           <p class="unavailable">Chana masala recipe</p>
         </a>
     </td>
 </tr>
@@ -136,7 +152,7 @@
            href="#"
            onmouseover="showPreview('images/5recommendationsformyfriends.png', 'Lock your front door, grab your headphones/speakers— it is time to listen to music!')"
            onmouseout="hidePreview()">
-           5 music recommendations for my friends
+           <p  class="unavailable">5 music recommendations for my friends</p>
         </a>
     </td>
 </tr>
@@ -148,7 +164,7 @@
            href="#"
            onmouseover="showPreview('images/top5thingsbelieve.jpg', 'It is easy to be opinionated about music, but it is much harder to examine and challenge our opinions.')"
            onmouseout="hidePreview()">
-           Top 5 things I stopped believing about music
+           <p  class="unavailable">Top 5 things I stopped believing about music</p>
         </a>
     </td>
 </tr>
@@ -160,7 +176,7 @@
            href="#"
            onmouseover="showPreview('images/beingsilentishard.png', 'Is being silent a form of expression? Is being silent a form of repression?')"
            onmouseout="hidePreview()">
-           Being silent is hard
+           <p  class="unavailable"> Being silent is hard</p>
         </a>
     </td>
 </tr>
@@ -172,7 +188,7 @@
            href="#"
            onmouseover="showPreview('images/musiceducationandartisticfreedom.png', 'How does the level of rigidity in your instruction influence your ability to express yourself freely at school?')"
            onmouseout="hidePreview()">
-           Music education and artistic freedom
+           <p  class="unavailable">Music education and artistic freedom</p>
         </a>
     </td>
 </tr>
@@ -184,7 +200,7 @@
            href="#"
            onmouseover="showPreview('images/ilovegenerativemusic.jpg', 'You are provoked to construct a network of ideas whose ultimate goal is to exhibit musical expression in real-time, in the current moment.')"
            onmouseout="hidePreview()">
-           I love generative music because I love musical improvisation
+           <p  class="unavailable">I love generative music because I love musical improvisation</p>
         </a>
     </td>
 </tr>
@@ -196,7 +212,7 @@
            href="#"
            onmouseover="showPreview('images/hownottoselfexpress.png', 'Sharing your self-expression is like inviting someone to your garden.')"
            onmouseout="hidePreview()">
-           How not to self-express
+           <p  class="unavailable">How not to self-express</p>
         </a>
     </td>
 </tr>
@@ -208,7 +224,7 @@
            href="#"
            onmouseover="showPreview('images/whyilovethispianoperformance.png', 'When Aaron Parks chooses to play poetically in the key of C major one fine day.')"
            onmouseout="hidePreview()">
-           Why I love this piano performance
+           <p class="unavailable">Why I love this piano performance</p>
         </a>
     </td>
 </tr>
@@ -220,7 +236,7 @@
            href="#"
            onmouseover="showPreview('images/top5assignments.jpg', 'My favorite assignments at music school, which were at the very least fun, but also enriching in onr way or another.')"
            onmouseout="hidePreview()">
-           Top 5 assignments in music school
+           <p class="unavailable">Top 5 assignments in music school</p>
         </a>
     </td>
 </tr>
@@ -230,9 +246,9 @@
     <td class="title">
         <a class="title"
         href="#"
-        onmouseover="showPreview('images/nosunset.png', 'Thank god, no sunset!')"
+        onmouseover="showPreview('images/whatihate.png', 'Thank god, no sunset!')"
         onmouseout="hidePreview()">
-        What I hate about Trader Joes, sunsets, and the music of Yiruma
+        <p class="unavailable">What I hate about Trader Joes, sunsets, and the music of Yiruma</p>
         </a>
     </td>
 </tr>
@@ -252,6 +268,13 @@
 
 </div>
 
+<br>
+<br>
+<p class="unavailable" style="margin-right: 80px;"> * unavailable titles available upon friendly requests</p>
+
 <script src="preview.js"></script>
+
+
+
 </body>
 </html>
