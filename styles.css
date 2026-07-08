@@ -44,7 +44,7 @@ table {
     font-weight: 100;
     color: rgba(255, 255, 255, 200);
     text-align: center;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 
 }
 td {
@@ -315,7 +315,7 @@ a:active {
     font-size: clamp(1.1rem, 1.1vw, 3rem);
     margin: 1rem auto;
     padding: 1rem;
-    border: 1px solid violet;
+    /* border: 1px solid violet; */
     /* height: 100vh; */
     /* display:none; */
 }
