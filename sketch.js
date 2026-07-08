@@ -1,387 +1,266 @@
-let angle = 1;
-let totalAngle;
+let cx, cy;
+let rBase;
+let r = [0, 0, 0, 0];
 
-let frameRateVal;
+let bg;
 
-let bRed, bGreen, bBlue;
+let fps = [3, 14, 17, 19]; // this is not the correct terminology
+// let fps = [1, 7, 8, 9]; // this is not the correct terminology
 
-let frameCoords = [
-    [0.1, 0.1, 0.9, 0.1],
-    [0.9, 0.1, 0.9, 0.9],
-    [0.9, 0.9, 0.1, 0.9],
-    [0.1, 0.9, 0.1, 0.1]
-];
 
-let nCoords = [
-    [0.15, 0.2, 0.15, 0.4],
-    [0.15, 0.2, 0.3, 0.4],
-    [0.3, 0.2, 0.3, 0.4],
-];
+let updateRate;
 
-let e1Coords = [
-    [0.35, 0.2, 0.55, 0.2],
-    [0.35, 0.2, 0.35, 0.4], 
-    [0.35, 0.4, 0.55, 0.4],
-    [0.35, 0.3, 0.5, 0.3] 
-];
+let a = [25, 2, 12, 120];
 
-let wCoords = [
-    [0.6, 0.2, 0.6, 0.4],
-    [0.6, 0.4, 0.725, 0.3],
-    [0.725, 0.3, 0.85, 0.4],
-    [0.85, 0.4, 0.85, 0.2] 
-];
+let pie = [100, 120, 125, 130];
 
-let lCoords = [
-    [0.2, 0.6, 0.2, 0.8],
-    [0.2, 0.8, 0.3, 0.8]
-];
+let arcSizes = [112, 99, 98, 97];
 
-let iCoords = [
-    [0.35, 0.6, 0.35, 0.8],
-];
+let outOffsets = [60, 120, 190];
 
-let fCoords = [
-    [0.45, 0.6, 0.45, 0.8],
-    [0.45, 0.6, 0.6, 0.6],
-    [0.45, 0.7, 0.6, 0.7]
-];
+let eraserRotates = [54, 8, 0, 234, 7, 54];
+let eraserStrokeWeights = [0, 0, 0, 0, 0, 0];
 
-let e2Coords = [
-    [0.65, 0.6, 0.8, 0.6],
-    [0.65, 0.6, 0.65, 0.8],
-    [0.65, 0.8, 0.8, 0.8],
-    [0.65, 0.7, 0.8, 0.7]
-];
+let numLines;
+let numSubLines;
+let lineVal;
 
-let nLinez = [];
-let e1Linez = [];   
-let wLinez = [];
+let pause;
 
-let lLinez = [];
-let iLinez = [];
-let fLinez = [];
-let e2Linez = [];
+let blip;
 
-let frameLinez = [];
+let direction;
 
-function setup(){
-    let canvas = createCanvas(500, 500);
+//to do
+
+function setup() {
+  // Create a canvas that fills the entire browser window
+  // createCanvas(500, 500);
+
+  let canvas = createCanvas(500, 500);
     canvas.parent('sketch-holder');
 
-    bRed = 0;
-    bGreen = 0;
-    bBlue = 0;
-    background(bRed, bBlue, bGreen, 20);
-    setupLetters();
-    setupFrame();
+  pause = 1;
+  blip = 0;
+
+  direction = 1;
+
+  frameRate(60);
+
+  cx = width/2;
+  cy = height/2;
+  rBase = 0;
+
+  bg = random(200, 255);
+
+  updateRate = 3;
+
+  lineVal = 110;
+  numSubLines = 2;
+
+  angleMode(DEGREES);
 }
-function draw(){
 
-    background(bRed, bBlue, bGreen, 165);
+function draw() {
+  background(bg, 225);
 
-    frameRate(random(5, 10));
-    angleMode(DEGREES);
+  drawHooks();
+  drawOuterCircles();
+  drawCirc();
+  drawErasers();
 
-    totalAngle = (sin(angle)*100) + 70;
+  if (blip == 1) 
+    drawText();
 
-    updateDev(totalAngle);
-    updateLetters();
-    updateFrame();
-
-    angle += (10); 
-
-    angle = angle%360;
-
-    stroke(255, 255, 255, random(50));
-    strokeWeight(random(1));
-    line(width * random(1), height * random(1), width * random(1), height * random(1));
-}
-function setupFrame(){
+  if(pause == 1){
+    updateR();
+    updateBG();
+    updateErasers();
+    updateLines();
     
-    // setting up frame
-    for (let i = 0; i < frameCoords.length; i++)
-        {
-            frameLinez.push (new linez(
-                width * frameCoords[i][0], height * frameCoords[i][1],
-                width * frameCoords[i][2], height * frameCoords[i][3],
-                10, 5, 10
-            ));
-        }
+  }
+
+  if ((frameCount % 60) == 0){
+    blip = !(blip);
+    updateArcs();
+  }
+}
+
+function drawText(){
+  noStroke();
+  fill(0);
+  textSize(5);
+  textAlign(CENTER);
+  text("July 4 2026", width * 0.9, height * 0.9);
+}
+
+function drawHooks(){
+
+  noFill();
+  strokeWeight(1);
+  stroke(0);
+  // circle(cx, cy, 200);
+
+  for(let i = 0; i < numLines; i++){
+    push();
+    translate(cx, cy);
+    strokeWeight(1);
+    let p = 360/numLines;
+    line(0, 0,
+        150*cos(r[0] + (i*p)),
+        150*sin(r[0]+ (i*p)));
+        strokeWeight(3);
+    point(150*cos(r[0] + (i*p)),
+        150*sin(r[0]+ (i*p)));
+    pop();
+
+    for(let j = 1; j < numSubLines; j++){
+      push();
+
+      translate(cx, cy);
+      stroke(0, 0, 0, bg/j);
+      strokeWeight(1/(5*j));
+      line(
+      150 * cos(r[0] + (i*p)),
+      150 * sin(r[0] + (i*p)),
+      lineVal * cos(r[2] + (i*p)),
+      150/j * sin(r[2] + (i*p))
+      );
+      pop();
+    }
+
+  }
 
 }
-function updateFrame(){
 
-    for (let i = 0; i < frameCoords.length; i++)
-        {
-            frameLinez[i].display();
-        }
+function drawCirc(){
 
-}
-function alterParams(alterNumLines, alterNumPoints){
+  for(let i = 0; i < 4; i++){
 
-    for (let i = 0; i < nCoords.length; i++)
-        {
-            nLinez[i].changeParams(
-                width * nCoords[i][0], height * nCoords[i][1],
-                width * nCoords[i][2], height * nCoords[i][3],
-                random(alterNumLines), random(alterNumPoints)
-            );
-        }
+    push();
+    translate(cx,cy);
+    rotate(r[i]);
+    fill(255, 0, 0, a[i]);
+    noStroke();
+    arc(0, 0, arcSizes[i], arcSizes[i], 0, pie[i]);
+    pop();
 
-    // setting up E1
-    for (let i = 0; i < e1Coords.length; i++)
-        {
-            e1Linez[i].changeParams(
-                width * e1Coords[i][0], height * e1Coords[i][1],
-                width * e1Coords[i][2], height * e1Coords[i][3],
-                random(alterNumLines), random(alterNumPoints)
-            );
-        }
-
-
-    // setting up W
-    for (let i = 0; i < wCoords.length; i++)
-        {
-            wLinez[i].changeParams(
-                width * wCoords[i][0], height * wCoords[i][1],
-                width * wCoords[i][2], height * wCoords[i][3],
-                random(alterNumLines), random(alterNumPoints)
-            );
-        }
-
-
-    // setting up L
-    for (let i = 0; i < lCoords.length; i++)
-        {
-            lLinez[i].changeParams(
-                width * lCoords[i][0], height * lCoords[i][1],
-                width * lCoords[i][2], height * lCoords[i][3],
-                random(alterNumLines), random(alterNumPoints)
-            );
-        }
-
-    // setting up I
-    for (let i = 0; i < iCoords.length; i++)
-        {
-            iLinez[i].changeParams(
-                width * iLinez[i][0], height * iLinez[i][1],
-                width * iLinez[i][2], height * iLinez[i][3],
-                random(20), random(alterNumPoints)
-            );
-        }
-
-    // setting up F
-    for (let i = 0; i < fCoords.length; i++)
-        {
-            fLinez[i].changeParams(
-                width * fCoords[i][0], height * fCoords[i][1],
-                width * fCoords[i][2], height * fCoords[i][3],
-                random(alterNumLines), random(alterNumPoints)
-            );
-        }
-
-    // setting up E
-    for (let i = 0; i < e2Coords.length; i++)
-        {
-            e2Linez[i].changeParams(
-                width * e2Coords[i][0], height * e2Coords[i][1],
-                width * e2Coords[i][2], height * e2Coords[i][3],
-                random(alterNumLines), random(alterNumPoints)
-            );
-        }
-    
-}
-function setupLetters(){
-    // setting up N
-    for (let i = 0; i < nCoords.length; i++)
-        {
-            nLinez.push (new linez(
-                width * nCoords[i][0], height * nCoords[i][1],
-                width * nCoords[i][2], height * nCoords[i][3],
-                10, 5, 50
-            ));
-        }
-
-    // setting up E1
-    for (let i = 0; i < e1Coords.length; i++)
-        {
-            e1Linez.push (new linez(
-                width * e1Coords[i][0], height * e1Coords[i][1],
-                width * e1Coords[i][2], height * e1Coords[i][3],
-                10, 5, 50
-            ));
-        }
-
-    // setting up W
-    for (let i = 0; i < wCoords.length; i++)
-        {
-            wLinez.push (new linez(
-                width * wCoords[i][0], height * wCoords[i][1],
-                width * wCoords[i][2], height * wCoords[i][3],
-                10, 5, 50
-            ));
-        }
-
-    // setting up L
-    for (let i = 0; i < lCoords.length; i++)
-        {
-            lLinez.push (new linez(
-                width * lCoords[i][0], height * lCoords[i][1],
-                width * lCoords[i][2], height * lCoords[i][3],
-                10, 5, 50
-            ));
-        }
-
-    // setting up I
-    for (let i = 0; i < iCoords.length; i++)
-        {
-            iLinez.push (new linez(
-                width * iCoords[i][0], height * iCoords[i][1],
-                width * iCoords[i][2], height * iCoords[i][3],
-                10, 5, 50
-            ));
-        }
-
-    // setting up F
-    for (let i = 0; i < fCoords.length; i++)
-        {
-            fLinez.push (new linez(
-                width * fCoords[i][0], height * fCoords[i][1],
-                width * fCoords[i][2], height * fCoords[i][3],
-                10, 5, 50
-            ));
-        }
-
-    // setting up E
-    for (let i = 0; i < e2Coords.length; i++)
-        {
-            e2Linez.push (new linez(
-                width * e2Coords[i][0], height * e2Coords[i][1],
-                width * e2Coords[i][2], height * e2Coords[i][3],
-                10, 5, 50
-            ));
-        }
+  }
 
 }
-function updateDev(devAmount)
-{
 
-    devAmount = constrain(devAmount, 3, 100);
-    for (let i = 0; i < nCoords.length; i++)
-        {
-            nLinez[i].changeDev(devAmount);
-        }
-
-    for (let i = 0; i < e1Coords.length; i++)
-        {
-            e1Linez[i].changeDev(devAmount);
-        }
-
-    for (let i = 0; i < wCoords.length; i++)
-        {
-            wLinez[i].changeDev(devAmount);
-        }
+function drawErasers(){
+  noStroke();
+  fill(bg);
+  circle(cx, cy, 30, 30);
 
 
-    for (let i = 0; i < lCoords.length; i++)
-        {
-            lLinez[i].changeDev(devAmount);
-        }
+  for(let i = 0; i < eraserRotates.length; i++){
+    push();
+    translate(cx, cy);
+    rotate(eraserRotates[i]);
+    noFill();
+    stroke(bg);
+    strokeWeight(eraserStrokeWeights[i]);
+    ellipse(0, 0, random(50, 51) - (i*10), random(180, 181));
 
-    for (let i = 0; i < iCoords.length; i++)
-        {
-            iLinez[i].changeDev(devAmount);
-        }
+    pop();
+  }
 
-    for (let i = 0; i < fCoords.length; i++)
-        {
-            fLinez[i].changeDev(devAmount);
-        }
-
-    for (let i = 0; i < e2Coords.length; i++)
-        {
-            e2Linez[i].changeDev(devAmount);
-        }
-
-    for (let i = 0; i < e2Coords.length; i++)
-        {
-            frameLinez[i].changeDev(devAmount);
-        }
-
-} 
-function updateLetters(){
-    
-    for (let i = 0; i < nCoords.length; i++)
-        {
-            nLinez[i].display();
-        }
-
-    for (let i = 0; i < e1Coords.length; i++)
-        {
-            e1Linez[i].display();
-        }
-
-    for (let i = 0; i < wCoords.length; i++)
-        {
-            wLinez[i].display();
-        }
-
-
-    for (let i = 0; i < lCoords.length; i++)
-        {
-            lLinez[i].display();
-        }
-
-    for (let i = 0; i < iCoords.length; i++)
-        {
-            iLinez[i].display();
-        }
-
-    for (let i = 0; i < fCoords.length; i++)
-        {
-            fLinez[i].display();
-        }
-
-    for (let i = 0; i < e2Coords.length; i++)
-        {
-            e2Linez[i].display();
-        }
 }
-function drawGrid(){
-    for (let i = 0; i < 20; i++)
-        {
-            strokeWeight(3);
-            stroke(0);
-            line((i+1)* 0.05 * width, 0, (i+1)* 0.051* width, height);
-        }
 
-    for (let i = 0; i < 10; i++)
-        {
-            strokeWeight(2);
-            stroke(0);
-            line(0, (i+1) * 0.1 * height, width, (i+1) * 0.1 * height);
-        }
-        for (let i = 0; i < 20; i++)
-            {
-                strokeWeight(3);
-                stroke(0);
-                line((i+1)* 0.05 * width, 0, (i+1)* 0.051* width, height);
-            }
-    
-        for (let i = 0; i < 10; i++)
-            {
-                strokeWeight(2
-                );
-                stroke(0);
-                line(0, (i+1)* 0.1 * height, width, (i+1)* 0.1 * height);
-            }
-        
-        if (mouseIsPressed === true)
-            {
-                strokeWeight(14);
-                stroke(255, 0, 0);
-                point(mouseX, mouseY);
-            }
-    
+function updateErasers(){
+  if(frameCount % fps[1] == 0){
+    eraserRotates[floor(random(eraserRotates.length))] += random(90);
+  }
+
+  if (frameCount % fps[1] == 0){
+  
+    for (let i =0; i< eraserStrokeWeights.length; i ++){
+    eraserStrokeWeights[i]= random(0.5);
+  }
+
+  }
+}
+
+function drawOuterCircles(){
+
+  for (let j = 2; j > 0; j--){
+    for(let i = 0; i < 4; i++){
+      push();
+      translate(cx,cy);
+      rotate(r[i]);
+      fill(255 - j*j*j, 0, 0, a[i] - (j*j*j));
+      noStroke();
+      arc(0, 0,
+          arcSizes[i] + (j*50), arcSizes[i] + (j*50),
+          j*50 + outOffsets[j], pie[i] + outOffsets[j]);
+      pop(); 
+    }
+  }
+}
+
+function updateR(){
+  rBase += updateRate;
+
+  for(let i = 0; i < 4; i++){
+
+    if(frameCount % fps[i] == 0){
+
+      r[i] = rBase * direction;
+
+    }
+  }
+
+}
+
+function mousePressed(){
+
+  pause= !(pause);
+  direction *= -1;
+
+}
+
+function mouseReleased(){
+
+  pause= !(pause);
+
+}
+
+function updateBG(){
+  if(frameCount % fps[3] == 0){
+    bg = random(250, 255);
+  }
+}
+
+function updateLines(){
+   if(frameCount % fps[3] == 0){
+      numLines = floor(random(5));
+
+      fps[0] = floor(random(1, 4));
+
+      lineVal = random(90, 110);
+      numSubLines = random(2, 4);
+  }
+
+
+}
+
+function updateArcs(){
+
+  //alpha
+  for (let i = 0; i < 4; i++){
+    a[i] = random(200);
+    pie[i] = random(100, 130);
+    arcSizes[i] = random(97, 112);
+    outOffsets[i] = random(60, 190);
+  }
+
+  // let pie = [100, 120, 125, 130];
+
+// let arcSizes = [112, 99, 98, 97];
+
+
+
+
 }

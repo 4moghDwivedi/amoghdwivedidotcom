@@ -1,3 +1,9 @@
+*{
+    /* border: 1px dashed red; */
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
     font-family: 'Work Sans';
     font-size: xx-large;
@@ -27,44 +33,42 @@ p {
     /* letter-spacing: 1px; */
 }
 
-ul{
+ul, ol{
     font-family: 'Work Sans';
     font-weight: 100;
     color: rgba(255, 255, 255, 200);
-    text-align: center;
-    list-style: disc;
+    padding-left: 2rem;
 }
 table {
     font-family: 'Work Sans';
     font-weight: 100;
     color: rgba(255, 255, 255, 200);
     text-align: center;
-    width: 40%;
-    margin-left: 10%;
-    flex: 0 0 40%;
+    /* border: 1px solid green; */
+
 }
 td {
     font-family: 'Work Sans';
-    font-weight: 100;
     color: rgba(255, 255, 255, 200);
 }
 table, th, td {
-  /* border: 0.1px solid pink; */
+  border-bottom: 0.1px solid rgba(255, 255, 255, 0.2);
 }
 td, th{
-    padding: 4.5px;
+    padding: 0.2rem;
+    
 }
 figcaption{
     font-family: 'Work Sans';
     font-weight: 100;
     color: rgba(255, 255, 255, 200);
-    text-align: center
+    text-align: center;
 }
 pre {
     font-family: 'Work Sans';
     font-weight: 100;
     color: white;
-    text-align: center
+    text-align: center;
 }
 a{
     font-family: 'Work Sans';
@@ -97,17 +101,6 @@ a:active {
     background-color: transparent;
     text-decoration: none;
 }
-
-#sketch-holder{
-    /* /* display: flex; */
-    justify-content: flex-end;
-    /* margin-top: 30px; */
-    /* border:2px solid yellow; */
-}
-
-/* div{
-    border: 1px dashed red;
-} */
 
 #preview-area{
     display: flex;
@@ -145,3 +138,357 @@ a:active {
     background-color: transparent;
     text-decoration: none;
 }
+
+.copyright{
+    color: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    /* border: 1px dashed violet; */
+    width: 95%;
+    margin: 2rem auto 1rem auto; 
+    font-size: clamp(1rem, 1.1vw, 1.4rem);
+}
+
+.copyright-home {
+    color: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    /* border: 1px dashed violet; */
+    width: 30rem;
+    margin: 2rem auto 1rem auto; 
+    font-size: clamp(1rem, 1.1vw, 1.4rem);
+}
+
+.sidebar-tabs{
+    text-align: center;
+    font-size: clamp(1.3rem, 1.5vw, 1.7rem);
+}
+
+.header-sidebar{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 5rem 0 5rem 45rem;
+    gap: 2rem;
+    /* border: 1px solid yellow; */
+    }
+
+.header-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 10em auto 3em auto;
+        height: 500px;
+        width: min(60rem, 65%);
+        /* border: 1px solid blue; */
+}
+
+#sketch-holder{
+    position: absolute;
+    display: block;
+}
+.header-everything{
+    display: flex;
+    flex-direction: column;
+}
+
+.music-pieces{
+    font-family: 'Work Sans';
+    font-size: 1.2rem;
+    text-align: left;
+    width: 40rem;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    /* position: fixed; */
+    /* border: 2px solid red; */
+    list-style:square;
+}
+
+.music-pieceList{
+    font-family: 'Work Sans';
+    text-align: left;
+    width: 40rem;
+    margin: 1rem auto;
+  
+    /* padding: 0px 0px 5px 550px; */
+}
+
+.music-container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    /* border: 2px solid green; */
+}
+
+.music-note{
+    font-family: 'Work Sans';
+    font-size: 1rem;
+    text-align: left;
+    width: 40rem;
+    margin: 1rem auto;
+    color: rgba(255, 255, 0, 0.8);
+    list-style: none;
+    /* text-indent: 3rem; */
+}
+
+
+.music-year{
+    position: sticky;
+    top: 3.5rem;
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: clamp(2rem, 2vw, 4rem);
+    background-color: black;
+}
+
+.music-performedPiece{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
+    width: 40rem;
+    margin: 1rem auto;
+
+}
+
+.banner{
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    justify-content: center;
+    /* font-size: 5vw; */
+    margin: 15px 0 10px 0;
+}
+/* make a media query for the music page */
+.banner-text{ 
+    margin: 1rem 0 1rem 0;
+    font-size: clamp(2rem, 1.5vw, 5rem);
+    text-wrap: wrap;
+}
+
+.sticky-copyright{
+    display: none;
+}
+
+.blog-date{
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5)
+}
+.blog-title{
+    text-align: right;
+    font-family: 'Work Sans';
+    font-weight: 100;
+    color: rgba(255, 255, 255, 200);
+}
+.blog-unavailable{
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 100;
+    text-align: right;
+}
+.blog-display{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: clamp(1.1rem, 1.1vw, 3rem);
+    margin: 1rem auto;
+    gap: 5rem;
+    padding: 2rem;
+    /* display:none; */
+}
+
+.blogpost-title{
+    width: min(55rem, 85%);
+    font-size: clamp(1.6rem,2vw,2rem);
+    margin: 0 auto;
+    border-bottom: 1px solid gray;
+}
+
+.blogpost-date{
+    width: min(65rem, 90%);
+    margin: 1.4rem auto;
+    text-align: left;
+
+}
+.blogpost-text{
+    font-size: clamp(1.1rem, 1.1vw, 3rem);
+    width: min(65rem, 90%);
+    margin: 1.4rem auto;
+    line-height: max(1.9rem, 2.5vw);
+    text-align: left;
+}
+
+.bio-text{
+    width: min(91rem, 90%);
+    margin: 0 auto;
+    font-size: clamp(1.1rem, 1vw, 2rem);
+    text-align: left;
+    padding-left: max(2rem, 5%);
+    padding-right: max(2rem, 5%);
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    line-height: 1.5rem;
+}
+
+@media(max-width: 1296px){
+
+.header-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+}
+
+.header-sidebar{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 35.5rem auto;
+    gap: 30px;
+    width: 95%;
+
+}
+
+.sidebar-tabs{
+    text-align: center;
+    font-size: max(3vw, 1.7rem);
+}
+
+#sketch-holder{
+        display: block;
+        width: 500px;
+}
+
+.copyright{
+    margin: 5rem auto 3rem auto;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: max(2vw, 1.4rem);
+    width: 95%;
+    /* margin: 2rem auto 10rem auto;  */
+}
+
+.copyright-home{
+    margin: 23rem auto 3rem auto;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: max(2vw, 1.4rem);
+    width: 39rem;
+    /* margin: 2rem auto 10rem auto;  */
+}
+
+.music-pieces{
+    font-family: 'Work Sans';
+    font-size: 1.5rem;
+    text-align: left;
+    width: min(50rem, 85%);
+    padding: 0.5rem;
+    margin: 1.4rem auto;
+    list-style:square;
+}
+
+.music-pieceList{
+    font-family: 'Work Sans';
+    text-align: left;
+    width: 40rem;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    /* padding: 0px 0px 5px 550px; */
+}
+
+.music-container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    /* border: 2px solid green; */
+}
+
+.music-note{
+    font-family: 'Work Sans';
+    font-size: 1rem;
+    text-align: left;
+    width: 40rem;
+    margin: 1rem auto;
+    color: rgba(255, 255, 0, 0.8);
+    list-style: none;
+    font-size: 1.5rem;
+    /* text-indent: 3rem; */
+}
+
+.music-year{
+    position: sticky;
+    top: 3.5rem;
+    padding-bottom:10px;
+    font-size: clamp(2rem, 1.8vw, 5rem);
+    background-color: black;
+}
+
+.music-performedPiece{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
+    width: 40rem;
+    margin: 1rem auto;
+
+}
+
+.bio-text{
+    font-size: clamp(1.3rem, 2vw, 3rem);
+    text-align: left;
+    padding-left: min(2rem, 5%);
+    padding-right: min(2rem, 5%);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    line-height: 2rem;
+}
+
+#preview-area{
+    display: none;
+}
+
+
+.blog-display{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem auto;
+    gap: 5rem;
+    padding: 2rem;
+}
+
+.blogpost-title{
+    width: min(55rem, 85%);
+    font-size: clamp(3rem, 2vw, 2rem);
+    margin: 0 auto;
+    border-bottom: 1px solid gray;
+}
+
+.blogpost-date{
+    width: min(65rem, 90%);
+    font-size: 2rem;
+    margin: 1.4rem auto;
+    text-align: left;
+
+}
+.blogpost-text{
+    font-size: 2rem;
+    width: min(65rem, 90%);
+    margin: 1.4rem auto;
+    /* padding: 1rem min(18rem, 95%); */
+    line-height: 3.5rem;
+    text-align: left;
+}
+td, th{
+    padding: 0.8rem;
+    font-size: 1.8rem;
+}
+.banner-text{
+    font-size: 3rem;
+}
+
+}
+
+

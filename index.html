@@ -1,88 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-          <style>
-      .tabs{
-        text-align: right;
-        /* margin-right: 5%; */
-        /* border: 0.1px solid white; */
-      }
-      .sidebar{
-        display: flex;
-        /* border: 2px solid red; */
-        /* margin-right: 100px; */
-        min-height: 500px;
-        flex-direction: column;
-        justify-content: center;
-        flex-shrink: 0;
-        width: 100px;
-      }
-      .dummy{
-        width: 100px;
-      }
-      .homebox{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        min-height: 400px;
-        grid-template-columns: 1fr 500px 250px;
-        gap: 200px;
-
-
-        /* border: 2px solid green; */
-
-      }
-    </style>
             <title> homepage </title>
             <link rel="stylesheet" href="../styles.css">
-            <!-- used chatgpt for importing fonts -->
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
+            <style>
+              @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+            </style>            
             <!-- used chatgpt for general logic behind implementing a p5 sketch -->
             <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.js"></script>
     </head>
 
     <body style="background-color: black;">
-
-  <!-- HEADER -->
-    <!-- <br>
-    <br>
-  <h1 style="margin-top: 3%"> <a href="../">AMOGH DWIVEDI</a></h1>
-  <div style="text-align: center;" >
-      <br>
-      <br>
-      <br>
-  </div> -->
-  <!-- HEADER -->
-<br>
-<br>
-<br>
-<br>
-<br>
-
-      <div class="homebox">
-
-        <!-- dummy sidebar for alignment purposes-->
-        <div class="sidebar">
-        </div>
+    <div class="header-everything">
+    <div class="header-container">
 
       <div id="sketch-holder"></div>
-        <div class="sidebar">
-          <p class="tabs"><a href="music/">music</a></p>
-          <p class="tabs"><a href="blog/">blog</a></p>
-          <p class="tabs"><a href="bio">biography</a></p>
-          <!-- <p class="tabs">photos</p> -->
-          <p class="tabs"><a href="contact/">contact</a></p>
+
+      <div class="header-sidebar">
+          <p class="sidebar-tabs"><a href="music/">music</a></p>
+          <p class="sidebar-tabs"><a href="blog/">blog</a></p>
+          <p class="sidebar-tabs"><a href="bio">biography</a></p>
+          <p class="sidebar-tabs"><a href="contact/">contact</a></p>
           <!-- <p class="tabs">about this site</p> -->
         </div>
+
 
       <script src="linez.js"></script>
       <script src="sketch.js"></script>
 
       </div>
-      
+      <h3 class="copyright-home"> Copyright Amogh Dwivedi 2026. All rights reserved.</h3>
+      </div>
     </body>
 </html>

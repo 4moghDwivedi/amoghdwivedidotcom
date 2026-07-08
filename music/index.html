@@ -2,133 +2,116 @@
 <html>
     <head>
       <style>
-        .pieces{
-          font-family: 'Work Sans';
-          font-weight: 100;
-          text-align: left;
-          margin: 10px;
-          /* border: 2px solid red; */
-        }
-        .pieceList{
-          font-family: 'Work Sans';
-          font-weight: 100;
-          text-align: left;
-          text-indent: 2em;
-          margin-top: 3px;
-          margin-bottom: 3px;
-          /* border: 2px solid red; */
-        }
-        .container{
-          display: flex;
-          flex-direction: column;
-          align-content: center;
-          /* border: 2px solid pink; */
-          margin-left: 30%;
-        }
-        .note{
-          font-family: 'Work Sans';
-          font-size: 75%;
-          font-weight: 100;
-          text-align: left;
-          margin: 10px;
-          color: rgba(255, 255, 0, 0.8);
-          text-indent: 2em;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
       </style>
             <title> music </title>
             <link rel="stylesheet" href="../styles.css">
-            <!-- used chatgpt for importing fonts -->
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
-    </head>
+ </head>
 
     <body style="background-color: black;">
 
-  <!-- HEADER -->
-  <h1 style="margin-top: 3%"> <a href="../">AMOGH DWIVEDI</a></h1>
-  <div style="text-align: center;" >
-      <!-- <a style="margin:0 30px" href="../music/"> music </a>
-      <a style="margin:0 30px" href="../bio/"> bio </a>
-      <a style="margin:0 30px" href="../contact/"> contact </a> -->
-      <br>
-  </div>
-  <!-- HEADER -->
-
-
+  <!-- BANNER -->
+   <header class="banner">
+    <a class ="banner-text"href="../"> AMOGH DWIVEDI</a>
+   </header>
+  <!-- BANNER -->
 
 <!-- <h1> 2026 </h1> -->
-    <h1> 2025 </h1>
-    <div class="container">
-      <p class="pieces"> <b><i><a target="_blank" href="https://youtu.be/2UyvQql7sGI">it could happen to us</a></i></b> (max/msp + Arduino IDE)</p>
-      <p class="note"> * presented at International Computer Music Conference 2025, Boston, MA</p>
-      <p class="pieces"> <b><i><a target="_blank" href="https://youtu.be/h38qaaIR6yw">disengage</a></i></b> (Ableton Live, Jitter)</p>
-      <p class="pieces"> <b><i><a target="_blank" href="https://youtu.be/fwvI7uvK4Yc?si=Kfp5c7d-CE4owbAu">be nowhere, go miles</a></i></b> (Ableton Live)</p>
-      <p class="note"> * performed at Bleep / Blorp Festival 2025, Lowell, MA</p>
-      <p class="pieces"> <i>Brave Candles, Brutal Snowstorms</i> for saxophone quartet</p>
-      <p class="pieces"> <i>Sweet Dreams, Picky Dreamer! </i> for jazz piano trio and string quartet</p>
+    <h1 class="music-year"> 2025 </h1>
+    <div class="music-container">
+      <ul>
+      <li class="music-pieces"> <b><i><a target="_blank" href="https://youtu.be/2UyvQql7sGI">it could happen to us</a></i></b> (max/msp + Arduino IDE)</li>
+      <li class="music-note"> "special installation" at International Computer Music Conference 2025, Boston, MA</li>
+      <li class="music-pieces"> <b><i><a target="_blank" href="https://youtu.be/h38qaaIR6yw">disengage</a></i></b> (Ableton Live, Jitter)</li>
+      <li class="music-pieces"> <b><i><a target="_blank" href="https://youtu.be/fwvI7uvK4Yc?si=Kfp5c7d-CE4owbAu">be nowhere, go miles</a></i></b> (Ableton Live)</li>
+      <li class="music-note"> performed at Bleep / Blorp Festival 2025, Lowell, MA</li>
+      <li class="music-pieces"> <i>Brave Candles, Brutal Snowstorms</i> for saxophone quartet</li>
+      <li class="music-pieces"> <i>Sweet Dreams, Picky Dreamer! </i> for jazz piano trio and string quartet</li>
+   
+      </ul>
+ </div>
+
+    <br>
+    <br>
+
+    <h1 class="music-year"> 2024 </h1>
+    <div class="music-container">
+      <ul>
+        <li class="music-pieces"> <i> 3 redacted poems (max/msp)</i>
+          <ol type="i">
+              <li class="music-pieceList"> <i>furikake</i> </li>
+              <li class="music-pieceList"> <i>the nice things</i> </li>
+              <li class="music-pieceList"> <i>PRESENT TENSE WORKS AND LASTS!</i> </li>
+          </ol>
+
+        </li>
+
+        <li class="music-pieces"> <a target="_blank" href="https://www.youtube.com/playlist?list=PL2cE3bQQP2jmgVpH3gz74eZz4r64z1JOA">Bildungsroman (max/msp)</a>
+          <ol type="i">
+            <li class="music-pieceList"> - <a target="_blank" href="https://youtu.be/PE_IUnKsLvY">traintrip</a> </li>
+            <li class="music-pieceList"> - <a target="_blank" href="https://youtu.be/eRPw4BkMbqM">yo Pierre!</a> </li>
+            <li class="music-pieceList"> - <a target="_blank" href="https://youtu.be/UPX6tAA74dM">lemonrinse</a> </li>
+          </ol>
+        </li>
+        <li class="music-note"> performed at PdMaxCon25~, Urbana Champaign, IL</li>
+        <li class="music-pieces"> <b><i><a target="_blank" href="https://youtu.be/WT8Ums0xV3k">Come Back To Earth</a> (Mac Miller) </i></b></li>
+        <li class="music-pieces"> <b><i><a target="_blank" href="https://youtu.be/Iu4sI0uhLvo">Nostalgia Addict</a> </i></b> for piano, shakuhachi, and fixed media</li>
+        <li class="music-pieces"> <b><i><a target="_blank" href="https://youtu.be/2JNdmzi367w">Lake Champlain</a> </i></b> for piano and live electronics</li>
+        <li class="music-note"> performed at Ambient Night 2024 at Berklee College of Music, Boston MA</li>
+        <li class="music-pieces"> <i>scrolling through reels </i> for flute, clarinet, violin and cello</li>
+    
+      </ul>
+   </div>
+
+    <br>
+    <br>
+
+    <h1 class="music-year"> 2023 </h1>
+    <div class="music-container">
+      <ul>
+          <li class="music-pieces"><b><i><a target="_blank" href="https://youtu.be/WpW4IS4A8B8">Faucet</a></i></b> (Ableton Live)</li>
+          <li class="music-note"> presented at a screening at Performing Media Festival 2025, South Bend IN</li>
+          <li class="music-pieces"><i>Sitting in Silence</i> for string quartet</li>
+          <li class="music-note"> performed in concert by Mivos Quartet at Berklee College of Music, Boston MA</li>
+          <li class="music-pieces"><i>City Life</i> (max/msp, Ableton Live, Jitter)</li>
+          <li class="music-pieces"><i> open doors</i> for orchestra</li>
+          <li class="music-pieces"><i> 3 pieces in Csound</i>
+            <ol type="i">
+              <li class="music-pieceList"> Kaija Saariaho</li>
+              <li class="music-pieceList"> Teacher Demonstrates</li>
+              <li class="music-pieceList"> Rituals</li>
+            </ol>
+
+          </li>
+          <li class="music-pieces"> <i> Ok mr Whitacre </i> for large choir </li>
+          <li class="music-pieces"> <i> Calling</i> for string quintet</li>
+      </ul>
+   
     </div>
 
     <br>
     <br>
 
-    <h1> 2024 </h1>
-    <div class="container">
-    <p class="pieces"> <i> 3 redacted poems (max/msp)</i></p>
-    <p class="pieceList"> - <i>furikake</i> </p>
-    <p class="pieceList"> - <i>the nice things</i> </p>
-    <p class="pieceList"> - <i>PRESENT TENSE WORKS AND LASTS!</i> </p>
-    <p class="pieces"> <a target="_blank" href="https://www.youtube.com/playlist?list=PL2cE3bQQP2jmgVpH3gz74eZz4r64z1JOA">Bildungsroman (max/msp)</a> </p>
-    <p class="note"> * performed at PdMaxCon25~, Urbana Champaign, IL</p>
-    <p class="pieceList"> - <a target="_blank" href="https://youtu.be/PE_IUnKsLvY">traintrip</a> </p>
-    <p class="pieceList"> - <a target="_blank" href="https://youtu.be/eRPw4BkMbqM">yo Pierre!</a> </p>
-    <p class="pieceList"> - <a target="_blank" href="https://youtu.be/UPX6tAA74dM">lemonrinse</a> </p>
-    <p class="pieces"> <b><i><a target="_blank" href="https://youtu.be/WT8Ums0xV3k">Come Back To Earth</a> (Mac Miller) </i></b></p>
-    <p class="pieces"> <b><i><a target="_blank" href="https://youtu.be/Iu4sI0uhLvo">Nostalgia Addict</a> </i></b> for piano, shakuhachi, and fixed media</p>
-    <p class="pieces"> <b><i><a target="_blank" href="https://youtu.be/2JNdmzi367w">Lake Champlain</a> </i></b> for piano and live electronics</p>
-    <p class="note"> * performed at Ambient Night 2024 at Berklee College of Music, Boston MA</p>
-    <p class="pieces"> <i>scrolling through reels </i> for flute, clarinet, violin and cello</p>
-    </div>
-
-    <br>
-    <br>
-
-    <h1> 2023 </h1>
-    <div class="container">
-    <p class="pieces"><b><i><a target="_blank" href="https://youtu.be/WpW4IS4A8B8">Faucet</a></i></b> (Ableton Live)</p>
-    <p class="note"> * presented at a screening at Performing Media Festival 2025, South Bend IN</p>
-    <p class="pieces"><i>Sitting in Silence</i> for string quartet</p>
-    <p class="note"> * performed in concert by Mivos Quartet at Berklee College of Music, Boston MA</p>
-    <p class="pieces"><i>City Life</i> (max/msp, Ableton Live, Jitter)</p>
-    <p class="pieces"><i> open doors</i> for orchestra</p>
-    <p class="pieces"><i> 3 pieces in Csound</i></p>
-    <p class="pieceList"> - Kaija Saariaho</p>
-    <p class="pieceList"> - Teacher Demonstrates</p>
-    <p class="pieceList"> - Rituals</p>
-    <p class="pieces"> <i> Ok mr Whitacre </i> for large choir </p>
-    <p class="pieces"> <i> Calling</i> for string quintet</p>
-    </div>
-
-    <br>
-    <br>
-
-    <h1> 2022 </h1>
-    <div class="container">
-    <p class="pieces"><i>Tribulations</i> for percussion</p>
-    <p class="note"> * performed in concert by Iktus Percussion at Berklee College of Music, Boston MA </p>
-    <p class="pieces"><i>True</i> for flute, clarinet, violin, cello, electronics</p>
-    <p class="pieces"><i>Arbitrary</i> for soprano sax, violin, piano, electronics</p>
-    <p class="pieces"><i><b> <a target="_blank" href="https://youtu.be/LAikxyrH7uo">171 Mass Ave</a> </b></i> for solo piano</p>
-    <p class="note"> * performed in concert by Mia Elezović at Boston Conservatory, Boston MA</p>
-    <p class="pieces"><i>Space Cow (acousmatic)</i></p>
-    <p class="pieces"><i>Not Found </i> (acousmatic)</p>
+    <h1 class="music-year"> 2022 </h1>
+    <div class="music-container">
+      <ul>
+        <li class="music-pieces"><i>Tribulations</i> for percussion</li>
+        <li class="music-note"> performed in concert by Iktus Percussion at Berklee College of Music, Boston MA </li>
+        <li class="music-pieces"><i>True</i> for flute, clarinet, violin, cello, electronics</li>
+        <li class="music-pieces"><i>Arbitrary</i> for soprano sax, violin, piano, electronics</li>
+        <li class="music-pieces"><i><b> <a target="_blank" href="https://youtu.be/LAikxyrH7uo">171 Mass Ave</a> </b></i> for solo piano</li>
+        <li class="music-note"> performed in concert by Mia Elezović at Boston Conservatory, Boston MA</li>
+        <li class="music-pieces"><i>Space Cow (acousmatic)</i></li>
+        <li class="music-pieces"><i>Not Found </i> (acousmatic)</li>
+      </ul>
 
     </div>
+ 
+    <br>
+       </div class="sticky-copyright">
+    <h3 class="copyright"> Copyright Amogh Dwivedi 2026. All rights reserved.</h3>
+    </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
 
     </body>
 </html>
