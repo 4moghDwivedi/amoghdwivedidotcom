@@ -44,7 +44,7 @@ table {
     font-weight: 100;
     color: rgba(255, 255, 255, 200);
     text-align: center;
-    /* border: 1px solid green; */
+    border: 1px solid green;
 
 }
 td {
@@ -55,7 +55,7 @@ table, th, td {
   border-bottom: 0.1px solid rgba(255, 255, 255, 0.2);
 }
 td, th{
-    padding: 0.2rem;
+    padding: 0.4rem;
     
 }
 figcaption{
@@ -167,28 +167,51 @@ a:active {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin: 5rem 0 5rem 45rem;
+    /* margin: 5rem 0 5rem 45rem; */
+    margin: 0 auto;
     gap: 2rem;
     /* border: 1px solid yellow; */
     }
+
+.header-sidebar-dummy{
+    display:flex;
+    color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    gap: 2rem;
+    /* border: 1px solid yellow; */
+    }
+.header-sidebar-dummy p{
+    color: black;
+
+    }
+
+
+
 
 .header-container{
         display: flex;
         flex-direction: row;
         justify-content: center;
         margin: 10em auto 3em auto;
-        height: 500px;
+        /* height: 500px; */
         width: min(60rem, 65%);
-        /* border: 1px solid blue; */
+        height: min(100vh, 100%);
+        /* border: 3px solid blue; */
 }
 
 #sketch-holder{
-    position: absolute;
-    display: block;
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
 }
 .header-everything{
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    /* border: 1px solid red; */
 }
 
 .music-pieces{
@@ -291,8 +314,9 @@ a:active {
     justify-content: center;
     font-size: clamp(1.1rem, 1.1vw, 3rem);
     margin: 1rem auto;
-    gap: 5rem;
-    padding: 2rem;
+    padding: 1rem;
+    border: 1px solid violet;
+    /* height: 100vh; */
     /* display:none; */
 }
 
@@ -329,6 +353,20 @@ a:active {
     line-height: 1.5rem;
 }
 
+.contact-note{
+    width: min(50rem, 95%);
+    margin: 0 auto;
+    font-size: clamp(1.1rem, 1.1vw, 1.5rem);
+}
+
+.contact-links{
+    width: min(50rem, 95%);
+    margin: 9rem auto 3rem auto;
+
+    font-size: clamp(1.1rem, 1.1vw, 1.5rem);
+
+}
+
 @media(max-width: 1296px){
 
 .header-container{
@@ -350,13 +388,25 @@ a:active {
 
 }
 
+.header-sidebar-dummy{
+    display:none;
+    /* color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    gap: 2rem;
+    border: 1px solid yellow; */
+    }
+
 .sidebar-tabs{
     text-align: center;
     font-size: max(3vw, 1.7rem);
 }
 
 #sketch-holder{
-        display: block;
+    position: absolute;
+        /* display: block; */
         width: 500px;
 }
 
@@ -370,7 +420,7 @@ a:active {
 }
 
 .copyright-home{
-    margin: 23rem auto 3rem auto;
+    margin: 3rem auto 3rem auto;
     padding: 10px;
     color: rgba(255, 255, 255, 0.3);
     font-size: max(2vw, 1.4rem);
@@ -457,6 +507,8 @@ a:active {
     margin: 1rem auto;
     gap: 5rem;
     padding: 2rem;
+    /* height: 100vh; */
+
 }
 
 .blogpost-title{
