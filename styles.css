@@ -186,10 +186,7 @@ a:active {
 .header-sidebar-dummy p{
     color: black;
 
-    }
-
-
-
+}
 
 .header-container{
         display: flex;
@@ -202,10 +199,21 @@ a:active {
         /* border: 3px solid blue; */
 }
 
+.sketch-container{
+    display: flex;
+    flex-direction: column;
+     margin: auto;
+}
+
 #sketch-holder{
     /* position: absolute; */
     display: flex;
     align-items: center;
+}
+
+.sketch-title{
+    margin: 0.5rem auto 0;
+    color: gray;
 }
 .header-everything{
     display: flex;
@@ -315,6 +323,7 @@ a:active {
     font-size: clamp(1.1rem, 1.1vw, 3rem);
     margin: 1rem auto;
     padding: 1rem;
+    gap: 10rem;
     /* border: 1px solid violet; */
     /* height: 100vh; */
     /* display:none; */
