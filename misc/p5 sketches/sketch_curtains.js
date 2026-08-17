@@ -40,9 +40,9 @@ fill(255, 0, 0, 15);
 textFont('Veranda')
 text("12 July 2026", width * 0.8, height * 0.95);
 
-fill(0, 0, 0);
-textFont('Veranda')
-text("curtains", width * 0.1, height * 0.1);
+// fill(0, 0, 0);
+// textFont('Veranda')
+// text("curtains", width * 0.1, height * 0.1);
 
 for(let i = 0; i < random(900, 1100); i++){
 
