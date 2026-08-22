@@ -160,6 +160,15 @@ a:active {
     font-size: clamp(1rem, 1.1vw, 1.4rem);
 }
 
+.copyright-misc {
+    color: rgba(255, 255, 255, 0.2);
+    /* padding: 1rem; */
+    /* border: 1px dashed violet; */
+    width: 30rem;
+    margin: 0 auto 2rem auto; 
+    font-size: clamp(1rem, 1.1vw, 1.4rem);
+}
+
 .sidebar-tabs{
     text-align: center;
     font-size: clamp(1rem, 1vw, 1.7rem);
@@ -290,6 +299,35 @@ a:active {
     width: 40rem;
     margin: 1rem auto;
 
+}
+
+.listen-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 8rem 0 0; */
+}
+
+.listen-entry{
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.listen-blurb{
+    text-align: center;
+    padding: 1rem;
+    width: 19rem;
+    margin: 0 auto;
+    text-wrap: wrap;
+    align-items: center;
+}
+
+.listen-sidebyside{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner{
@@ -435,7 +473,7 @@ a:active {
     text-align: left;
     width: 30rem;
     /* padding: 1rem; */
-    margin: 1rem auto 0rem;
+    margin: 1% auto 0rem;
 }
 .misc-list{
 
@@ -443,8 +481,8 @@ a:active {
     font-size: clamp(0.9rem, 0.9vw, 2rem);
     text-align: left;
     width: 30rem;
-    padding: 2rem;
-    margin: 1rem auto;
+    padding: 1rem;
+    margin: 0 auto;
     /* position: fixed; */
     /* border: 2px solid red; */
 }
@@ -459,6 +497,21 @@ a:active {
     /* border: 2px solid red; */
 }
 
+.misc-sketch-container{
+    /* margin: auto auto; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 500px;
+    margin: 0 auto;
+    /* position: absolute; */
+}
+
+@view-transition {
+    navigation: auto;
+}
 
 
 @media(max-width: 1296px){
@@ -501,7 +554,7 @@ a:active {
 #sketch-holder{
     position: absolute;
         /* display: block; */
-        width: 500px;
+    width: 500px;
 }
 
 .copyright{
