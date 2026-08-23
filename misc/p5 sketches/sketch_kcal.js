@@ -1,4 +1,8 @@
-//konnakol composition calculator
+// K-cal
+// Amogh Dwivedi
+// amoghdwivedi.com
+// all rights reserved
+
 //
 //1 - 0 —> add number to sum (0 is 10)
 // c -> clear sum

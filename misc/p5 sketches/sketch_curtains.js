@@ -1,3 +1,9 @@
+// curtains
+// Amogh Dwivedi
+// amoghdwivedi.com
+// all rights reserved
+
+
 let w, h;
 
 let r, gmin, gmax, bmin, bmax;

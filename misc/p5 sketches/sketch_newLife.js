@@ -1,3 +1,9 @@
+// New Life
+// Amogh Dwivedi
+// amoghdwivedi.com
+// all rights reserved
+
+
 let angle = 1;
 let totalAngle;
 

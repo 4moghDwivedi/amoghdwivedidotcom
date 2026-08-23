@@ -1,3 +1,9 @@
+// quads
+// Amogh Dwivedi
+// amoghdwivedi.com
+// all rights reserved
+
+
 let dim;
 
 function setup() {

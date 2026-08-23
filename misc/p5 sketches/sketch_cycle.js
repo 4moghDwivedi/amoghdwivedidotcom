@@ -1,3 +1,9 @@
+// cycle
+// Amogh Dwivedi
+// amoghdwivedi.com
+// all rights reserved
+
+
 let numCols = 10;
 let numRows = 10;
 let cols1 = new Array(numCols);

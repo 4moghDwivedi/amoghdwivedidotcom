@@ -1,3 +1,9 @@
+// Derivative
+// Amogh Dwivedi
+// amoghdwivedi.com
+// all rights reserved
+
+
 let cx, cy;
 let rBase;
 let r = [0, 0, 0, 0];
