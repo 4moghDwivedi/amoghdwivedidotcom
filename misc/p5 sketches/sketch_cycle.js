@@ -3,27 +3,26 @@
 // amoghdwivedi.com
 // all rights reserved
 
-
 let numCols = 10;
 let numRows = 10;
 let cols1 = new Array(numCols);
 let sWeights = new Array(numRows);
 let firstIndex = 0;
 let circColorVal = new Array(3);
-let circColor = 0;
+let circColor;
 let pend = 0;
-
 
 function setup() {
   // Create a canvas that fills the entire browser window
   let canvas= createCanvas(500, 500);
   canvas.parent('sketch-holder');
-  frameRate(5);
+    frameRate(10); 
 
   circColorVal[0] = 255;
   circColorVal[1] = 0;
   circColorVal[2] = 0;
 
+  circColor=floor(random(2));
 
   for (let i = 0; i <= numCols; i++){
     cols1[i] = width * 0.8 * (i/numCols);
@@ -55,9 +54,8 @@ function setup() {
 function draw() {
 
   background(0, map(pend, 0, 100, 100, 255));
-  frameRate(random(3, 10)); 
 
-  pend += random(5);
+  pend += floor(random(5));
 
   pend = pend % 100;
 
@@ -66,15 +64,16 @@ function draw() {
       push();
       translate(cols1[i], 0);
       stroke(random(circColorVal[0]), random(circColorVal[1]), circColorVal[2], random(255));
-      strokeWeight(sWeights[j][i]);
+
       if(random(100) < pend)
         {
           noFill();
-          // fill(random(255));
-          circle(random(-1, 1), random(-5, 5) + height * (0.2 + ((0.6/(numRows-1))*j)), 1);
+          strokeWeight(map(pend,0, 100, 30, 1));
+          circle(random(-1, 1), random(-5, 5) + height * (0.2 + ((0.6/(numRows-1))*j)), sWeights[j][i]);
         }
           else
         {
+          strokeWeight(sWeights[j][i]);
           point(random(-1, 1), random(-5, 5) + height * (0.2 + ((0.6/(numRows-1))*j)));
         }
           pop();
@@ -101,34 +100,37 @@ function cycle(colNum){
 
 function keyPressed(){
   if (key === ' '){
-    circColor = !(circColor);
+    incrementCircColor();
   }
 
-  if(circColor == 1){
-    circColorVal[0] = 0;
-    circColorVal[1] = 255;
-    circColorVal[2] = 0;
-  }
-  else{
-    circColorVal[0] = 255;
-    circColorVal[1] = 0;
-    circColorVal[2] = 0;
-  }
+
 }
 
 function mouseClicked(){
 
-    circColor = !(circColor);
+  incrementCircColor();
 
-  if(circColor == 1){
-    circColorVal[0] = 0;
-    circColorVal[1] = 255;
-    circColorVal[2] = 0;
-  }
-  else{
+}
+
+function incrementCircColor(){
+
+  frameRate(floor(random(7, 10)));
+  circColor ++;
+  circColor = circColor%3;
+
+    if(circColor == 0){
     circColorVal[0] = 255;
     circColorVal[1] = 0;
     circColorVal[2] = 0;
   }
-
+  else if(circColor == 1){
+    circColorVal[0] = 0;
+    circColorVal[1] = 255;
+    circColorVal[2] = 0;
+  }
+  else if(circColor == 2){
+    circColorVal[0] = 0;
+    circColorVal[1] = 0;
+    circColorVal[2] = 255;
+}
 }
