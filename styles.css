@@ -309,6 +309,16 @@ a:active {
     /* margin: 8rem 0 0; */
 }
 
+.listen-big-vid{
+    width: 840px;
+    height: 473px;
+}
+
+.listen-small-vid{
+    width: 560px;
+    height: 315px;
+}
+
 .listen-entry{
     margin: 4rem 0;
     text-align: center;
@@ -630,6 +640,24 @@ a:active {
     margin: 1rem auto;
 
 }
+
+.listen-sidebyside{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.listen-big-vid{
+    width: 504px;
+    height: 284px;
+}
+
+.listen-small-vid{
+    width: 504px;
+    height: 284px;
+}
+
 
 .bio-text{
     font-size: clamp(1.3rem, 2vw, 3rem);

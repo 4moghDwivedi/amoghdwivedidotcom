@@ -41,7 +41,26 @@
 
 
       <!-- <script src="linez.js"></script> -->
-      <script src="misc/p5 sketches/sketch_quads.js"></script>
+      <script> // this script shit is kinda vibe coded. i know what it does though. yup... ugh... the discomfort...
+  const sketches = [
+    ["misc/p5 sketches/sketch_curtains.js"],
+    ["misc/p5 sketches/sketch_derivative.js"],
+    ["misc/p5 sketches/sketch_psycle.js"],
+    ["misc/p5 sketches/sketch_quads.js"],
+    [
+      "misc/p5 sketches/newLife_linez.js",
+      "misc/p5 sketches/sketch_newLife.js"
+    ]
+  ];
+
+  const files = sketches[Math.floor(Math.random() * sketches.length)];
+
+  for (const file of files) {
+    const script = document.createElement("script");
+    script.src = file;
+    document.body.appendChild(script);
+  }
+</script>
 
       </div>
       <h3 class="copyright-home"> Copyright Amogh Dwivedi 2026. All rights reserved.</h3>
