@@ -116,7 +116,7 @@ function showFacts(){
   strokeWeight(1);
   if (frameCount <= (60*45)){ // between 0 - 30 seconds
     if (frameCount % (60*10) == 0){
-       currentFact = round(random(100));
+       currentFact = floor(random(100));
     }
     text("fun fact #" + (currentFact + 1) + ": " + loadFacts[currentFact], 100, 350, 300, 500);
   }
@@ -192,7 +192,7 @@ function loadFacts(){
   loadFacts[56] = "not all facts are likely to be as interesting to you as others";
   loadFacts[57] = "many wounds can be outgrown";
   loadFacts[58] = "scientists have studied the cross-pollination of languages in multicultural societies";
-  loadFacts[59] = "not all scientific evidence is equal, and some forms of research (i.e. a meta analysis) carries more weight than others (e.g. a single, isolated case study)"  
+  loadFacts[59] = "not all scientific evidence is equal, and some forms of research (i.e. a meta analysis) carry more weight than others (e.g. a single, isolated case study)"  
   loadFacts[60] = "7 + 7 = 14";
   loadFacts[61] = "parallels between politics and music theory have been made";
   loadFacts[62] = "sleep quality has a significant effect on human health";
